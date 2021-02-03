@@ -18,7 +18,7 @@ terraform {
 # }
 
 resource "google_compute_instance" "mohivm" {
-  name         = "mohi-vm"
+  name         = "mohi-vm-demo"
   machine_type = "f1-micro"
   zone         = "us-east4-a"
   metadata_startup_script = <<-EOT
