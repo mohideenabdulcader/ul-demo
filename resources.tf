@@ -25,31 +25,31 @@
 #  value =  aws_instance.mohi-vm.cpu_core_count
 # }
 
-resource "google_compute_instance" "linuxvm" {
-  name         = "linux-mohi-vm"
-  machine_type = "f1-micro"
-  zone         = "us-east4-a"
-  labels = {
-    env = "prod",
-    creator = "mohi"
-  }
-  tags = ["env", "terraform"]
+# resource "google_compute_instance" "linuxvm" {
+#   name         = "linux-mohi-vm"
+#   machine_type = "f1-micro"
+#   zone         = "us-east4-a"
+#   labels = {
+#     env = "prod",
+#     creator = "mohi"
+#   }
+#   tags = ["env", "terraform"]
 
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-9"
-    }
-  }
+#   boot_disk {
+#     initialize_params {
+#       image = "debian-cloud/debian-9"
+#     }
+#   }
 
 
-  network_interface {
-   subnetwork = "sbnt-ul-poc-01"
+#   network_interface {
+#    subnetwork = "sbnt-ul-poc-01"
 
-    access_config {
-      // Ephemeral IP
-    }
-  }
-}
+#     access_config {
+#       // Ephemeral IP
+#     }
+#   }
+# }
 
 resource "google_compute_instance" "windows" {
   name         = "windows-instance-mohi"
@@ -99,7 +99,7 @@ output "serial_out" {
   value = data.google_compute_instance_serial_port.serial.contents
 }
 
-output "linuxvm" {
-  value = google_compute_instance.linuxvm.network_interface[0].access_config
-}
+# output "linuxvm" {
+#   value = google_compute_instance.linuxvm.network_interface[0].access_config
+# }
 
