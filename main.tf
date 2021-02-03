@@ -9,13 +9,6 @@ terraform {
     prefix  = "terraform/states"
   }
 }
-# resource "aws_instance" "mohi-vm" {
-#   ami = "ami-0885b1f6bd170450c"
-#   instance_type = "t2.micro"
-#   tags = {
-#   Name = "Mohi-instance"
-#  }
-# }
 
 # output "aws_instance1_id" {
 #  value = aws_instance.mohi-vm.id
