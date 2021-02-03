@@ -23,7 +23,7 @@ resource "google_compute_instance" "mohivm" {
   zone         = "us-east4-a"
   metadata_startup_script = <<-EOT
     sudo apt-get update
-    sudo apt-get remove docker docker-engine docker.io containerd runc
+    sudo apt-get remove docker docker-engine docker.io containerd runc -y
     sudo apt-get install \
       apt-transport-https \
       ca-certificates \
