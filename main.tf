@@ -44,6 +44,7 @@ resource "google_compute_instance" "mohivm" {
   labels = {
     env = "prod",
     creator = "mohi"
+    capability = "Terraform"
   }
   tags = ["env", "terraform"]
 
