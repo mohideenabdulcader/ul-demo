@@ -61,7 +61,6 @@ resource "google_compute_instance" "mohivm" {
     }
   }
 }
-
 output "output_vm" {
   value = google_compute_instance.mohivm.network_interface[0].access_config
 }
